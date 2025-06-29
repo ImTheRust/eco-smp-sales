@@ -1,16 +1,8 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
 const Database = require('./database/database');
 const { loadCommands } = require('./utils/commandLoader');
 const { loadEvents } = require('./utils/eventLoader');
 const cron = require('node-cron');
-
-// Start health server for Railway
-require('./health');
-
-// Start Discord bot (non-blocking)
-require('./bot');
 
 // Create a new client instance
 const client = new Client({
